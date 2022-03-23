@@ -14,23 +14,23 @@
 # define IS_INTEGRAL_HPP
 
 //////////////////////////////////////////////////////////////////////////////////////
-// https://www.cplusplus.com/reference/type_traits/is_integral/?kw=is_integral		//
-// Checks whether T is an integral type.											//
-// Provides the member constant value which is equal to true, if T is the type :	//
-// - bool																			//
-// - char																			//
-// - wchar_t																		//
-// - signed char																	//
-// - short int																		//
-// - int																			//
-// - long int																		//
-// - long long int																	//
-// - unsigned char																	//
-// - unsigned short int																//
-// - unsigned int																	//
-// - unsigned long int																//
-// - unsigned long long int															//
-// Otherwise, value is equal to false.												//
+// https://www.cplusplus.com/reference/type_traits/is_integral/?kw=is_integral	    //
+// Checks whether T is an integral type.					    //
+// Provides the member constant value which is equal to true, if T is the type :    //
+// - bool									    //
+// - char									    //
+// - wchar_t									    //
+// - signed char							 	    //
+// - short int									    //
+// - int									    //
+// - long int									    //
+// - long long int								    //
+// - unsigned char								    //
+// - unsigned short int								    //
+// - unsigned int								    //
+// - unsigned long int								    //
+// - unsigned long long int							    //
+// Otherwise, value is equal to false.						    //
 //////////////////////////////////////////////////////////////////////////////////////
 
 namespace ft
