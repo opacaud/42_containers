@@ -14,15 +14,15 @@
 # define EGAL_HPP
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-// https://www.cplusplus.com/reference/algorithm/equal/?kw=equal						    //
-// Compares the elements in the range [first1,last1) with those in the range       			//
-// beginning at first2, and returns true if all of the elements in both ranges match.		//
-// Pred represents a binary function that accepts two elements as argument					//
-// (one of each of the two sequences, in the same order),									//
-// and returns a value convertible to bool. The value returned 								//
+// https://www.cplusplus.com/reference/algorithm/equal/?kw=equal			    //
+// Compares the elements in the range [first1,last1) with those in the range       	    //
+// beginning at first2, and returns true if all of the elements in both ranges match.	    //
+// Pred represents a binary function that accepts two elements as argument		    //
+// (one of each of the two sequences, in the same order),				    //
+// and returns a value convertible to bool. The value returned 				    //
 // indicates whether the elements are considered to match in the context of this function.  //
-// The function shall not modify any of its arguments.										//
-// This can either be a function pointer or a function object.								//
+// The function shall not modify any of its arguments.				    	    //
+// This can either be a function pointer or a function object.				    //
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "is_integral.hpp"
