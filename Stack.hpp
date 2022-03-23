@@ -14,11 +14,11 @@
 # define STACK_HPP
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// https://en.cppreference.com/w/cpp/container/stack  																//
-// The std::stack class is a container adaptor that gives the programmer											//
-// the functionality of a stack - specifically, a LIFO (last-in, first-out) data structure.							//
-// The class template acts as a wrapper to the underlying container - only a specific set of functions is provided.	//
-// The stack pushes and pops the element from the back of the underlying container, known as the top of the stack.	//
+// https://en.cppreference.com/w/cpp/container/stack  								    //
+// The std::stack class is a container adaptor that gives the programmer			   		    //
+// the functionality of a stack - specifically, a LIFO (last-in, first-out) data structure.			    //
+// The class template acts as a wrapper to the underlying container - only a specific set of functions is provided. //
+// The stack pushes and pops the element from the back of the underlying container, known as the top of the stack.  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # include <iostream>
@@ -32,7 +32,7 @@ namespace ft
 		public:
 
 			// MEMBER TYPES
-			typedef Container							container_type;
+			typedef Container				container_type;
 			typedef typename Container::value_type		value_type;
 			typedef typename Container::size_type		size_type;
 			typedef typename Container::reference		reference;
