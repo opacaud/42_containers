@@ -26,10 +26,10 @@ namespace ft
     {
         public :
         
-	        typedef ptrdiff_t						difference_type;
-            typedef T								value_type;
-	        typedef value_type *					pointer;
-	        typedef value_type &					reference;
+	        typedef ptrdiff_t			difference_type;
+            	typedef T				value_type;
+	        typedef value_type *			pointer;
+	        typedef value_type &			reference;
 	        typedef ft::bidirectional_iterator_tag	iterator_category;
         
         protected :
@@ -80,15 +80,15 @@ namespace ft
 				{
 					ptr_on_node tmp = m_ptr;
 					m_ptr = m_ptr->m_parent_node;
-                    /* Loop
-				        parent                               parent         		 			 parent                         	m_ptr (parent) 4
-				         /      	                          /             		 			   /                       	             /
-                        A                                    A              		 	    m_ptr (pointe sur A)                 tmp (pointe sur A) 1
-				       /  \                                 / \             		             / \			           	           /  \
-				      B    C                        	   B   m_ptr (pointe sur C)             B  tmp (pointe sur C)		          C    C 2
-                     /      \                             /     \                              /	 \			                     /      \
-                    D        m_ptr (pointe sur E)  		 D       tmp (pointe sur E)           D 	  E			            	    D        E 3
-					*/
+                    		/* Loop
+				        parent 4                              parent 4        		 			 parent 4                      		m_ptr (parent 4)
+				         /      	                      /             		 			   /                       	         /
+                        		A 1                                  A 1             		 	    		m_ptr (pointe sur A 1)                 tmp (pointe sur A 1)
+				       /  \                                 /  \             		             		/   \			              /   \
+				     B 0   C 2                        	  B 0   m_ptr (pointe sur C 2)             	      B 0    tmp (pointe sur C 2)	    B 0   C 2
+                     		     /      \                             /      \                             		      /	      \			            /       \
+                    		   D -1     m_ptr (pointe sur E 3)   	 D -1    tmp (pointe sur E 3)         		    D -1        E 3		          D -1       E 3
+				*/
 					while (m_ptr && m_ptr->m_left_node != tmp)
 					{
 						tmp = m_ptr;
