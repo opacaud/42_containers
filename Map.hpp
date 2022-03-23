@@ -14,9 +14,9 @@
 # define MAP_HPP
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-// https://en.cppreference.com/w/cpp/container/map									 	   //
+// https://en.cppreference.com/w/cpp/container/map					   //
 // Map is a sorted associative container that contains key-value pairs with unique keys.   //
-// Keys are sorted by using the comparison function Compare.							   //
+// Keys are sorted by using the comparison function Compare.				   //
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 # include <iostream>
@@ -81,19 +81,19 @@ namespace ft
 		public:
 
 			// MEMBER TYPES
-			typedef Key															key_type;
-			typedef T															mapped_type;
-			typedef pair<const Key, T>											value_type;
-			typedef Compare														key_compare;
-			typedef Tnode<value_type>											node_type;
-			typedef Alloc														allocator_type;
+			typedef Key								key_type;
+			typedef T								mapped_type;
+			typedef pair<const Key, T>						value_type;
+			typedef Compare								key_compare;
+			typedef Tnode<value_type>						node_type;
+			typedef Alloc								allocator_type;
 			typedef typename allocator_type::template rebind<node_type>::other	node_allocator;
-			typedef typename allocator_type::reference							reference;
-			typedef typename allocator_type::const_reference					const_reference;
-			typedef typename allocator_type::pointer							pointer;
-			typedef typename allocator_type::const_pointer						const_pointer;
-			typedef typename allocator_type::difference_type					difference_type;
-			typedef typename allocator_type::size_type							size_type;
+			typedef typename allocator_type::reference				reference;
+			typedef typename allocator_type::const_reference			const_reference;
+			typedef typename allocator_type::pointer				pointer;
+			typedef typename allocator_type::const_pointer				const_pointer;
+			typedef typename allocator_type::difference_type			difference_type;
+			typedef typename allocator_type::size_type				size_type;
 			typedef map_iterator<value_type, node_type*>                  		iterator;
 			typedef map_iterator<const value_type, node_type*>            		const_iterator;
 			typedef ft::reverse_iterator<iterator>                        		reverse_iterator;
@@ -102,9 +102,9 @@ namespace ft
 		protected :
 
 			node_allocator	m_alloc;
-			key_compare		m_compare;
-			size_type		m_size;
-			node_type		*m_root;
+			key_compare	m_compare;
+			size_type	m_size;
+			node_type	*m_root;
 		
 		public :
 
@@ -307,7 +307,7 @@ namespace ft
 				return (get_node_from_a_key(val.first, m_root));
 			};
 
-			template <class InputIterator> 									// range
+			template <class InputIterator> 						// range
 			void	insert(InputIterator first, InputIterator last,
 			typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterator>::type* = NULL)
 			{
@@ -372,9 +372,9 @@ namespace ft
 			};
 			
 			value_compare	value_comp() const			
-			{											// Returns an object of class value_compare,
+			{						// Returns an object of class value_compare,
 				return (value_compare(key_compare()));	// constructed from the Compare parameter used
-			};											// to build the map (less by default)
+			};						// to build the map (less by default)
 
 				// operations
 			iterator	find(const key_type & k)
@@ -693,19 +693,19 @@ namespace ft
 							m_size--;
 						}
 					}
-					else												// if curr has 2 children
+					else							// if curr has 2 children
 					{
 						node_type *tmp;
 						if (curr->m_right_node->m_end == false)
-							tmp = min_from_node(curr->m_right_node); // getting (in tmp) the node just after curr (41) : 42 here
+							tmp = min_from_node(curr->m_right_node);	// getting (in tmp) the node just after curr (41) : 42 here
 						else
 							tmp = curr->m_left_node;
 						/*
-						  parent(39)
-						     \
+						       parent(39)
+						     	  \
 							 curr(41)(to delete)
 							 /	\
-						    40	 43
+						       40	 43
 								/
 							  tmp(42)
 						*/
@@ -716,34 +716,34 @@ namespace ft
 						}
 						/*
 						  parent(39)		   parent(39)
-						     \					  \
-							 curr(41)			 curr(41)
-							 /	\				 /	\
-						    40	 43     -->	    40	tmp(42)
-								/					  \
-							  tmp(42)				   43
+						     \			      \
+						    curr(41)		     curr(41)
+						   /	\		     /	\
+						 40	 43       -->	   40	 tmp(42)
+							/			   \
+						      tmp(42)			    43
 						*/
 						tmp->m_left_node = curr->m_left_node;
 						curr->m_left_node->m_parent_node = tmp;
 						tmp->m_parent_node->m_left_node = NULL;			// not forgetting second child of curr
 						/*
-						  parent(39)		   			parent(39)
-						     \					  			\
-							curr(41)(to delete)		   	   curr(41)(to delete)
-							/	\					   	   /  \
-						   40    tmp(42)   		-->	   	NULL  tmp(42)
-								  \							  / \
-							       43			   			40  43
+						  parent(39)		   				parent(39)
+						     \					  		  \
+						     curr(41)(to delete)		   	          curr(41)(to delete)
+						     /	\					   	  /   \
+						   40    tmp(42)   		-->	   		NULL  tmp(42)
+						  	   \						      /  \
+							    43			   			     40   43
 						*/
 						tmp->m_parent_node = curr->m_parent_node;		// bypassing the node to delete
 						/*
-						  parent(39)		  			parent(39)
-						     \					 			\		curr(41)(to delete)
-							 curr(41)(to delete)		 	tmp(42)
-								\				 			 / \
-						    	tmp(42)     	-->	  	   40   43
-								/  \
-							   40  43
+						  parent(39)		  			 	parent(39)
+						     \					 		   \		curr(41)(to delete)
+						     curr(41)(to delete)		 		   tmp(42)
+							\				 		   /  \
+						    	tmp(42)    	 	-->	  	   	 40    43
+							/  \
+						      40    43
 						*/
 						if (m_root == curr)
 							m_root = tmp;
@@ -753,10 +753,10 @@ namespace ft
 						curr = tmp;										// make curr point at the node that is now where was the deleted one
 						/*
 							 parent(39)
-								\
+							     \
 							    curr(42)
-								/ \
-						       40  43
+							     / \
+						           40   43
 						*/
 					}
 				}
