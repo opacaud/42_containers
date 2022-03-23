@@ -14,12 +14,12 @@
 # define VECTOR_HPP
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-// https://www.cplusplus.com/reference/vector/vector/?kw=vector									//
-// Vectors are sequence containers representing arrays that can change in size.					//
+// https://www.cplusplus.com/reference/vector/vector/?kw=vector					//
+// Vectors are sequence containers representing arrays that can change in size.			//
 // Just like arrays, vectors use contiguous storage locations for their elements, which means 	//
 // that their elements can also be accessed using offsets on regular pointers to its elements,	//
 // and just as efficiently as in arrays. But unlike arrays, their size can change dynamically,	//
-// with their storage being handled automatically by the container.								//
+// with their storage being handled automatically by the container.				//
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 # include <exception>
@@ -44,18 +44,18 @@ namespace ft
 		public :
 
 			// MEMBER TYPES
-			typedef T												value_type;
-			typedef Alloc											allocator_type;
-			typedef size_t											size_type;
-			typedef ptrdiff_t										difference_type;
-			typedef typename allocator_type::reference				reference;
-			typedef typename allocator_type::const_reference		const_reference;
-			typedef typename allocator_type::pointer				pointer;
-			typedef typename allocator_type::const_pointer			const_pointer;
-			typedef random_access_iterator<value_type> 				iterator;
-			typedef random_access_iterator<const value_type>		const_iterator;
-			typedef reverse_iterator<const_iterator>				const_reverse_iterator;
-			typedef reverse_iterator<iterator>						reverse_iterator;
+			typedef T						value_type;
+			typedef Alloc						allocator_type;
+			typedef size_t						size_type;
+			typedef ptrdiff_t					difference_type;
+			typedef typename allocator_type::reference		reference;
+			typedef typename allocator_type::const_reference	const_reference;
+			typedef typename allocator_type::pointer		pointer;
+			typedef typename allocator_type::const_pointer		const_pointer;
+			typedef random_access_iterator<value_type> 		iterator;
+			typedef random_access_iterator<const value_type>	const_iterator;
+			typedef reverse_iterator<const_iterator>		const_reverse_iterator;
+			typedef reverse_iterator<iterator>			reverse_iterator;
 
 			// MEMBER FUNCTIONS
 				// default constructor: Constructs an empty container
@@ -586,7 +586,7 @@ namespace ft
 					i = 0;
 					while (first != last)
 					{
-						m_alloc.construct(new_start + index + i, *first);		// inserting
+						m_alloc.construct(new_start + index + i, *first);	// inserting
 						i++;
 						first++;
 					}
