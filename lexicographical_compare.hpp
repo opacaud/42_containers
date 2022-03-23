@@ -14,11 +14,11 @@
 # define LEXICOGRAPHICAL_COMPARE_HPP
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// https://www.cplusplus.com/reference/algorithm/lexicographical_compare/?kw=lexicographical_compare  			//
+// https://www.cplusplus.com/reference/algorithm/lexicographical_compare/?kw=lexicographical_compare  		//
 // Returns true if the range [first1,last1) compares lexicographically less than the range [first2,last2).  	//
 // The result of comparing these first non-matching elements is the result of the lexicographical comparison.	//
-// If both sequences compare equal until one of them ends,														//
-// the shorter sequence is lexicographically less than the longer one.											//
+// If both sequences compare equal until one of them ends,							//
+// the shorter sequence is lexicographically less than the longer one.						//
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "is_integral.hpp"
