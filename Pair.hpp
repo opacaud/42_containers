@@ -14,9 +14,9 @@
 # define PAIR_HPP
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-// https://www.cplusplus.com/reference/utility/pair/?kw=pair 									//
+// https://www.cplusplus.com/reference/utility/pair/?kw=pair 					//
 // This class couples together a pair of values, which may be of different types (T1 and T2).	//
-// The individual values can be accessed through its public members first and second.			//
+// The individual values can be accessed through its public members first and second.		//
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ft
