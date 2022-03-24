@@ -50,12 +50,12 @@ namespace ft
 	template <class T>
 	struct Tnode
 	{
-		T		m_value;
+		T	m_value;
 		Tnode	*m_left_node;
 		Tnode	*m_right_node;
 		Tnode	*m_parent_node;
-		int		m_balance;
-		int		m_height;
+		int	m_balance;
+		int	m_height;
 		bool	m_end;
 		
 		Tnode(T value, Tnode *left_node, Tnode *right_node, Tnode* parent_node, int balance, int height, bool end)
@@ -255,7 +255,7 @@ namespace ft
 				// element access
 			mapped_type &	at(const key_type & k)
 			{
-				node_type *curr;
+				node_type	*curr;
 
 				curr = get_node_from_a_key(k, m_root);
 				if (curr)
@@ -266,7 +266,7 @@ namespace ft
 
 			const mapped_type &	at(const key_type & k) const
 			{
-				node_type *curr;
+				node_type	*curr;
 
 				curr = get_const_node_from_a_key(k, m_root);
 				if (curr)
@@ -277,7 +277,7 @@ namespace ft
 
 			mapped_type &	operator[](const key_type & k)
 			{
-				node_type *curr;
+				node_type	*curr;
 
 				curr = get_node_from_a_key(k, m_root);
 				if (curr)
@@ -344,10 +344,10 @@ namespace ft
 
 			void	swap(map & x)
 			{
-				node_type		*tmp_root = m_root;
-				size_type		tmp_size = m_size;
+				node_type	*tmp_root = m_root;
+				size_type	tmp_size = m_size;
 				node_allocator	tmp_alloc = m_alloc;
-				key_compare		tmp_cmp = m_compare;
+				key_compare	tmp_cmp = m_compare;
 
 				m_root = x.m_root;
 				m_size = x.m_size;
@@ -406,8 +406,8 @@ namespace ft
 			
 			iterator	lower_bound(const key_type & k)
 			{
-				iterator it;
-				key_compare mycomp;
+				iterator	it;
+				key_compare	mycomp;
 				
 				it = begin();
 				mycomp = key_comp();
@@ -418,8 +418,8 @@ namespace ft
 			
 			const_iterator	lower_bound(const key_type & k) const
 			{
-				const_iterator it;
-				key_compare mycomp;
+				const_iterator	it;
+				key_compare	mycomp;
 				
 				it = begin();
 				mycomp = key_comp();
@@ -430,8 +430,8 @@ namespace ft
 			
 			iterator	upper_bound(const key_type & k)
 			{
-				iterator it;
-				key_compare mycomp;
+				iterator	it;
+				key_compare	mycomp;
 				
 				it = begin();
 				mycomp = key_comp();
@@ -444,8 +444,8 @@ namespace ft
 			
 			const_iterator	upper_bound(const key_type & k) const
 			{
-				const_iterator it;
-				key_compare mycomp;
+				const_iterator	it;
+				key_compare	mycomp;
 				
 				it = begin();
 				mycomp = key_comp();
@@ -640,20 +640,20 @@ namespace ft
 				else
 					left_key = key_type();
 				int balance = get_balance(curr);
-    			if (balance > 1 && get_balance(curr->m_left_node) >= 0)
-    			    return (rotate_right(curr));
-    			if (balance > 1 && get_balance(curr->m_left_node) < 0)
-    			{
-    			    curr->m_left_node = rotate_left(curr->m_left_node);
-    			    return (rotate_right(curr));
-    			}
-    			if (balance < -1 && get_balance(curr->m_right_node) <= 0)
-    			    return (rotate_left(curr));
-    			if (balance < -1 && get_balance(curr->m_right_node) > 0)
-    			{
-    			    curr->m_right_node = rotate_right(curr->m_right_node);
-    			    return (rotate_left(curr));
-    			}
+    				if (balance > 1 && get_balance(curr->m_left_node) >= 0)
+    			    	return (rotate_right(curr));
+				if (balance > 1 && get_balance(curr->m_left_node) < 0)
+				{
+				    curr->m_left_node = rotate_left(curr->m_left_node);
+				    return (rotate_right(curr));
+				}
+				if (balance < -1 && get_balance(curr->m_right_node) <= 0)
+				    return (rotate_left(curr));
+				if (balance < -1 && get_balance(curr->m_right_node) > 0)
+				{
+				    curr->m_right_node = rotate_right(curr->m_right_node);
+				    return (rotate_left(curr));
+				}
 				return (curr);
 			};
 
@@ -761,24 +761,24 @@ namespace ft
 					}
 				}
 				if (!curr)
-    			    return (curr);
-    			curr->m_height = 1 + max(get_height(curr->m_left_node), get_height(curr->m_right_node));
-				int balance = get_balance(curr);
-    			if (balance > 1 && get_balance(curr->m_left_node) >= 0)
-    			    return (rotate_right(curr));
-    			if (balance > 1 && get_balance(curr->m_left_node) < 0)
-    			{
-    			    curr->m_left_node = rotate_left(curr->m_left_node);
-    			    return (rotate_right(curr));
-    			}
-    			if (balance < -1 && get_balance(curr->m_right_node) <= 0)
-    			    return (rotate_left(curr));
-    			if (balance < -1 && get_balance(curr->m_right_node) > 0)
-    			{
-    			    curr->m_right_node = rotate_right(curr->m_right_node);
-    			    return (rotate_left(curr));
-    			}
-    			return (curr);
+    			    		return (curr);
+				curr->m_height = 1 + max(get_height(curr->m_left_node), get_height(curr->m_right_node));
+					int balance = get_balance(curr);
+				if (balance > 1 && get_balance(curr->m_left_node) >= 0)
+				    return (rotate_right(curr));
+				if (balance > 1 && get_balance(curr->m_left_node) < 0)
+				{
+				    curr->m_left_node = rotate_left(curr->m_left_node);
+				    return (rotate_right(curr));
+				}
+				if (balance < -1 && get_balance(curr->m_right_node) <= 0)
+				    return (rotate_left(curr));
+				if (balance < -1 && get_balance(curr->m_right_node) > 0)
+				{
+				    curr->m_right_node = rotate_right(curr->m_right_node);
+				    return (rotate_left(curr));
+				}
+				return (curr);
 			};
 
 			void	destroy_all_nodes_from(node_type *curr)
