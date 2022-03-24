@@ -86,7 +86,7 @@ namespace ft
 			template <class InputIterator>
 			vector(InputIterator first, InputIterator last, const allocator_type & alloc = allocator_type(), typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterator>::type* = NULL)
 			{
-				int				i;
+				int		i;
 				InputIterator 	first_copy;
 				InputIterator 	last_copy;
 
@@ -319,7 +319,7 @@ namespace ft
 				InputIterator	first_copy;
 				InputIterator	last_copy;
 				size_type	range;
-				size_type		i;
+				size_type	i;
 
 				range = 0;
 				first_copy = first;
@@ -525,11 +525,11 @@ namespace ft
 			template <class InputIterator>
 			void	insert(iterator position, InputIterator first, InputIterator last, typename ft::enable_if<!ft::is_integral<InputIterator>::value, InputIterator>::type* = NULL)
 			{
-				size_type		index;
+				size_type	index;
 				InputIterator 	first_copy;
 				InputIterator 	last_copy;
-				size_type		range;
-				size_type		i;
+				size_type	range;
+				size_type	i;
 
 				index = position - begin();
 				range = 0;
@@ -661,9 +661,9 @@ namespace ft
 
 			void	swap(vector & x)
 			{
-				pointer			tmp_start;
-				size_t			tmp_size;
-				pointer			tmp_end_of_capacity;
+				pointer		tmp_start;
+				size_t		tmp_size;
+				pointer		tmp_end_of_capacity;
 				allocator_type	tmp_alloc;
 
 				if (x != *this)
